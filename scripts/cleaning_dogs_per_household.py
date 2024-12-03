@@ -12,5 +12,8 @@ data = data.dropna()
 
 data['PostcodeDistrict'] = data['PostcodeDistrict'].str.upper()
 
+#Changing column names to make coding easier
+data.rename(columns={'PostcodeDistrict': 'postcode', 'DogsPerHousehold': 'dogs'})
+
 #Saving the clean data
 data.to_csv('cleaned_dogs_per_household.csv', index=False)
